@@ -1,0 +1,41 @@
+VENDOR DUMMY DATA / FUTURE BACKEND MODEL
+
+Current:
+- VENDOR_DATA in vendors.js is temporary frontend data.
+- Search works by Vendor ID, Email, or Name.
+- Example Vendor ID: 12345
+- Example Vendor ID: 25159
+
+Flow:
+1. Customers
+2. Vendors
+3. Enter 12345
+4. Search
+5. Vendor row appears
+6. Click the row
+7. Vendor Overview opens for Vendor ID 12345
+
+Later backend:
+GET /api/vendors/12345
+GET /api/vendors?email=...
+PATCH /api/vendors/12345
+
+Suggested database entity:
+vendors
+- id
+- name
+- email
+- phone
+- sales_id
+- kam_id
+- margin_group
+- balance
+- kyc_status
+- account_status
+- customer_type
+- source
+- onboarding_date
+- first_order_date
+- last_order_date
+
+Orders and other sections should use separate entities/tables and API routes.

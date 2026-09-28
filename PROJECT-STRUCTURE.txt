@@ -1,0 +1,74 @@
+SHIPGLOBAL DUMMY PORTAL - PROJECT STRUCTURE
+
+index.html
+│
+├── assets/
+│   ├── logo/
+│   ├── icons/
+│   └── images/
+│
+├── common/
+│   ├── css/
+│   │   ├── layout.css
+│   │   ├── sidebar.css
+│   │   ├── header.css
+│   │   ├── cards.css
+│   │   ├── dark-mode.css
+│   │   └── customer-pages.css
+│   │
+│   └── js/
+│       ├── sidebar.js
+│       ├── header.js
+│       ├── dark-mode.js
+│       ├── profile.js
+│       └── customer-pages.js
+│
+└── modules/
+    └── customers/
+        ├── README.txt
+        ├── kyc/
+        ├── vendors/
+        │   ├── vendors.js
+        │   ├── vendors.css
+        │   └── README.txt
+        └── franchise-customers/
+
+DEVELOPMENT PLAN
+
+PHASE 1:
+Build every screen and dropdown in frontend.
+
+PHASE 2:
+Add backend separately, for example:
+backend/
+├── server.js
+├── routes/
+├── controllers/
+├── models/
+├── config/
+└── database/
+
+PHASE 3:
+Connect frontend modules to backend APIs.
+
+PHASE 4:
+Connect database.
+
+This keeps frontend and backend separate and makes future changes easier.
+
+
+V6 VENDOR FLOW
+
+modules/customers/vendors/
+├── vendors.js          # Search, result table, vendor overview, tabs, accordions
+├── vendors.css         # Vendors list + Vendor Overview UI
+├── DATA-MODEL.txt      # Future backend/database mapping
+└── README.txt
+
+Frontend flow:
+Customers > Vendors > Search Vendor ID > Result Row > Vendor Overview
+
+Example:
+12345 -> Rohit Kumar -> Vendor Overview
+
+The dummy data is intentionally isolated so it can later be replaced by API calls.

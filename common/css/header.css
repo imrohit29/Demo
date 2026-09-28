@@ -1,0 +1,29 @@
+.top-header{height:61px;border-bottom:1px solid #e7e7e7;display:flex;align-items:center;background:#fff}
+.header-inner{height:100%;display:flex;align-items:center}
+.header-button{width:58px;height:100%;border-right:1px solid #eee;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#111}
+.header-button svg{width:18px;height:18px}
+.header-search{width:68px;height:100%;border-right:1px solid #eee;display:flex;align-items:center;justify-content:center;color:#1555bd;cursor:pointer}
+.header-search svg{width:21px;height:21px}
+.header-title{padding-left:16px;font-size:14px;color:#2457bd;font-weight:600}
+
+/* Vendor overview: Associate sits immediately to the left of Edit Vendor. */
+.header-title{display:flex;align-items:center;gap:10px;}
+.header-associate-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    height:30px;
+    padding:0 9px;
+    border:1px solid #c8d8ee;
+    border-radius:5px;
+    background:#fff;
+    color:#2457bd;
+    cursor:pointer;
+    font-size:12px;
+    font-weight:600;
+    white-space:nowrap;
+}
+.header-associate-btn:hover{background:#f4f8ff;}
+.header-associate-btn svg{width:14px;height:14px;}
+.header-breadcrumb-text{display:inline-flex;align-items:center;}

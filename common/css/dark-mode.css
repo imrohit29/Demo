@@ -1,0 +1,6 @@
+body.dark{background:#15171b;color:#f5f5f5}
+body.dark .sidebar,body.dark .top-header,body.dark .module-card,body.dark .sidebar-bottom{background:#1d2025;color:#f5f5f5}
+body.dark .sidebar{border-color:#333}body.dark .top-header{border-color:#333}
+body.dark .access-section p{color:#ddd}body.dark .menu-item{color:#aaa}
+body.dark .menu-item.active{background:#2a3448;color:#80a8ff}
+body.dark .module-card{border-color:#3b3f46}body.dark .dark-mode-button{border-color:#444}
