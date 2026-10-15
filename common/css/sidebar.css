@@ -1,0 +1,63 @@
+.sidebar{width:247px;height:100vh;border-right:1px solid #dedede;background:#fff;flex-shrink:0;overflow:hidden;transition:width .25s ease}
+.sidebar-inner{height:100%;min-height:0;display:flex;flex-direction:column}
+.sidebar-logo{height:61px;display:flex;align-items:center;padding:9px 10px;border-bottom:1px solid #7c7c7c;margin:0 8px}
+.sidebar-logo img{width:184px;height:42px;object-fit:contain;object-position:left center}
+.sidebar-menu{flex:1;min-height:0;overflow-y:auto;padding:12px 8px 8px}
+.sidebar-menu::-webkit-scrollbar{width:8px}
+.sidebar-menu::-webkit-scrollbar-thumb{background:#cfcfcf;border-radius:10px}
+.sidebar-menu::-webkit-scrollbar-track{background:transparent}
+.menu-item{width:100%;min-height:44px;display:flex;align-items:center;gap:12px;padding:0 9px;margin-bottom:4px;border-radius:14px;color:#777;font-size:16px;font-weight:500;cursor:pointer;transition:.15s}
+.menu-item:hover{background:#f4f6fb}
+.menu-item.active{background:#e8edf9;color:#2457bd;font-weight:600}
+.menu-item:nth-child(2) .menu-icon{color:#2457bd}
+.menu-item:nth-child(3) .menu-icon{color:#ff7800}
+.menu-item:nth-child(4) .menu-icon{color:#00b978}
+.menu-item:nth-child(5) .menu-icon{color:#8b42ff}
+.menu-item:nth-child(6) .menu-icon{color:#554dff}
+.menu-item:nth-child(7) .menu-icon{color:#ff5e63}
+.menu-item:nth-child(8) .menu-icon{color:#5b5bff}
+.menu-item:nth-child(9) .menu-icon{color:#8b42ff}
+.menu-item:nth-child(10) .menu-icon{color:#00a9c7}
+.menu-item:nth-child(11) .menu-icon{color:#ff9900}
+.menu-item:nth-child(12) .menu-icon{color:#5c79ff}
+.menu-item:nth-child(13) .menu-icon{color:#b5b5b5}
+.menu-icon{width:20px;height:20px;flex-shrink:0;stroke-width:2}
+.menu-arrow{margin-left:auto;width:15px;height:15px;color:#888;stroke-width:1.8}
+.sidebar-bottom{padding:7px 8px 8px;background:#fff;flex:0 0 auto;position:relative;z-index:20}
+.dark-mode-button{height:34px;border:1px solid #d6dbe4;border-radius:9px;display:flex;align-items:center;gap:9px;padding:0 10px;color:#8995a7;cursor:pointer;margin-bottom:16px;font-size:16px}
+.dark-mode-button svg{width:18px;height:18px}
+.profile-box{height:55px;border:1px solid #cfe0ff;border-radius:9px;padding:6px 10px;display:flex;align-items:center;gap:9px}
+.profile-avatar{width:36px;height:36px;border-radius:8px;background:#eef4ff;border:1px solid #d4e2ff;display:flex;align-items:center;justify-content:center;color:#2457bd;font-weight:600;font-size:15px}
+.profile-info{flex:1;min-width:0}
+.profile-name{font-size:14px;font-weight:600;color:#111}
+.profile-email{font-size:12px;color:#8290a5;margin-top:3px;white-space:nowrap}
+.profile-box > svg{width:16px;height:16px;color:#94a0b2}
+.sidebar.collapsed{width:70px}
+.sidebar.collapsed .sidebar-logo img{width:40px;object-fit:cover;object-position:left center}
+.sidebar.collapsed .menu-text,.sidebar.collapsed .menu-arrow,.sidebar.collapsed .profile-info{display:none}
+.sidebar.collapsed .sidebar-logo{justify-content:center;padding:8px}
+.sidebar.collapsed .menu-item{justify-content:center}
+.sidebar.collapsed .dark-mode-button{justify-content:center}
+.customer-submenu{display:none;padding:0 0 4px 14px}
+.customer-submenu.open{display:block}
+.submenu-item{min-height:36px;margin:2px 0;padding:0 8px;border-radius:9px;display:flex;align-items:center;gap:10px;color:#777;font-size:13px;cursor:pointer}
+.submenu-item svg{width:17px;height:17px;color:#00b978;flex-shrink:0}
+.submenu-item:nth-child(2) svg{color:#2457bd}
+.submenu-item:nth-child(3) svg{color:#7b3cff}
+.submenu-item:hover{background:#f4f6fb}
+.submenu-item.active-submenu{background:#e8edf9;color:#2457bd;font-weight:600}
+.submenu-item.active-submenu svg{color:#2457bd}
+.submenu-arrow{margin-left:auto;width:14px!important;height:14px!important;color:#888!important}
+
+
+.profile-wrap{position:relative}
+.profile-box{cursor:pointer;position:relative;z-index:2}
+.profile-popover{position:absolute;left:-1px;bottom:61px;width:178px;background:#fff;border:1px solid #e1e1e1;border-radius:7px;box-shadow:0 3px 12px rgba(0,0,0,.14);overflow:hidden;display:none;z-index:50}
+.profile-popover.open{display:block}
+.popover-user{height:58px;padding:7px 9px;display:flex;align-items:center;gap:9px}
+.popover-avatar{width:32px;height:32px;border-radius:8px;background:#f3f3f3;color:#333;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;flex-shrink:0}
+.popover-name{font-size:13px;font-weight:600;color:#111;line-height:16px}
+.popover-email{font-size:11px;color:#333;line-height:15px;white-space:nowrap}
+.popover-logout{height:42px;background:#f6f6f6;border-top:1px solid #eee;display:flex;align-items:center;gap:9px;padding:0 11px;font-size:14px;color:#222;cursor:pointer}
+.popover-logout:hover{background:#eeeeee}
+.popover-logout svg{width:18px;height:18px;stroke-width:2}

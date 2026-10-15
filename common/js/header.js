@@ -1,0 +1,3 @@
+const header=document.getElementById("header-content");
+header.innerHTML=`<div class="header-inner"><div class="header-button" id="sidebarToggle"><i data-lucide="panel-left"></i></div><div class="header-search" title="Search"><i data-lucide="search"></i></div><div class="header-title">Dashboard</div></div>`;
+setTimeout(()=>{lucide.createIcons();document.getElementById("sidebarToggle").addEventListener("click",()=>document.getElementById("sidebar").classList.toggle("collapsed"));},0);

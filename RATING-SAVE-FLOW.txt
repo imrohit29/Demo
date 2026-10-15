@@ -1,0 +1,35 @@
+RATING SAVE FLOW
+
+The rating selected in the call popup is now the same record displayed in the Rating section.
+
+Example:
+Incoming caller -> 8409767926 / Vendor ID 12345
+-> Accept / Receive
+-> call starts
+-> End Call / Reject
+-> Rating popup
+-> agent selects Good / Better / Bad
+-> record is saved to localStorage key: shipglobal_call_ratings
+-> Rating section reads that same saved collection
+-> customer appears under Contact Number
+-> Total Calls increases
+-> Average Rating recalculates
+-> Last Rating updates
+-> View Details shows the individual call, time, duration, agent, rating given and Bad reason.
+
+This is frontend storage for the prototype. For production, replace the localStorage
+write in common/js/cti-demo.js with your backend API/database insert.
+
+ASSOCIATE CURRENT CALL FLOW
+
+When a call is received from a number that is not mapped to the correct customer:
+-> Agent can open Vendor Overview
+-> Click Associate next to Edit Vendor
+-> Search by Vendor ID, phone, email or customer name
+-> Select Associate on the correct customer/vendor
+-> The active call is linked to that Vendor ID
+-> When the rating is submitted, the rating is saved against the associated Vendor ID and its registered phone
+-> The original incoming number is retained separately as incomingNumber
+-> If a rating was already saved for the same call, associating the call updates that existing rating record instead of creating a duplicate.
+
+This keeps the incoming caller number and the final associated customer identity separate.

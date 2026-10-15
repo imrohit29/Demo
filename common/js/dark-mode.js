@@ -1,0 +1,1 @@
+document.addEventListener("click",e=>{if(e.target.closest("#darkModeButton"))document.body.classList.toggle("dark")});

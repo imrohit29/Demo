@@ -1,0 +1,520 @@
+/* Direct CTI incoming-call pop-up */
+.cti-call-pop{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:420px;
+    background:#fff;
+    border-radius:15px;
+    box-shadow:0 10px 32px rgba(0,0,0,.22);
+    overflow:hidden;
+    z-index:99999;
+    border:1px solid #e0e4eb;
+}
+
+.cti-call-head{
+    height:86px;
+    background:#30394c;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    padding:0 15px;
+    gap:13px;
+}
+
+.cti-call-avatar{
+    width:51px;
+    height:51px;
+    flex:0 0 51px;
+    border-radius:50%;
+    background:#f1f5fa;
+    color:#64748b;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.cti-call-avatar svg{
+    width:23px;
+    height:23px;
+}
+
+.cti-call-head-info{
+    min-width:0;
+    flex:1;
+}
+
+.cti-call-number{
+    font-size:19px;
+    font-weight:700;
+    line-height:24px;
+}
+
+.cti-call-campaign{
+    margin-top:5px;
+    font-size:12px;
+    color:#fff;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.cti-call-minimize{
+    width:30px;
+    height:30px;
+    border:0;
+    background:transparent;
+    color:#fff;
+    font-size:25px;
+    line-height:28px;
+    cursor:pointer;
+    padding:0;
+}
+
+.cti-call-more{
+    border:0;
+    background:transparent;
+    color:#fff;
+    font-size:23px;
+    letter-spacing:2px;
+    cursor:pointer;
+    padding:4px;
+}
+
+.cti-call-body{
+    padding:20px 17px 19px;
+}
+
+.cti-call-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.cti-call-title{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    color:#344054;
+    font-size:18px;
+    font-weight:700;
+}
+
+.cti-call-title svg{
+    width:19px;
+    height:19px;
+}
+
+.cti-call-timer{
+    color:#4b4b4b;
+    font-size:16px;
+    font-variant-numeric:tabular-nums;
+}
+
+.cti-call-label{
+    margin-top:18px;
+    margin-bottom:7px;
+    color:#8a96a8;
+    font-size:16px;
+}
+
+.cti-call-description{
+    width:100%;
+    height:84px;
+    border:1px solid #d3dbe7;
+    border-radius:10px;
+    padding:13px;
+    resize:none;
+    outline:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:14px;
+    color:#344054;
+}
+
+.cti-call-description:focus{
+    border-color:#7193d7;
+    box-shadow:0 0 0 2px rgba(113,147,215,.1);
+}
+
+.cti-call-customer{
+    margin-top:17px;
+    padding:13px;
+    border-radius:8px;
+    background:#e9f8ef;
+    color:#168044;
+    font-size:14px;
+    line-height:21px;
+}
+
+.cti-call-customer strong{
+    font-weight:700;
+}
+
+.cti-call-buttons{
+    display:flex;
+    gap:11px;
+    margin-top:17px;
+}
+
+.cti-call-accept,
+.cti-call-reject{
+    height:49px;
+    border-radius:7px;
+    border:0;
+    cursor:pointer;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:15px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+}
+
+.cti-call-accept{
+    flex:1;
+    background:#18b96b;
+    color:#fff;
+}
+
+.cti-call-accept:hover{
+    background:#119d59;
+}
+
+.cti-call-accept.connected{
+    background:#159b59;
+}
+
+.cti-call-reject{
+    width:107px;
+    background:#f34d51;
+    color:#fff;
+}
+
+.cti-call-reject:hover{
+    background:#dd3f43;
+}
+
+.cti-call-accept svg,
+.cti-call-reject svg{
+    width:18px;
+    height:18px;
+}
+
+@media(max-width:600px){
+    .cti-call-pop{
+        right:10px;
+        bottom:10px;
+        width:calc(100vw - 20px);
+        max-width:420px;
+    }
+}
+
+
+/* Minimized CTI state: call continues and timer keeps running. */
+.cti-call-pop.cti-minimized{
+    width:270px;
+    border-radius:13px;
+}
+
+.cti-call-pop.cti-minimized .cti-call-head{
+    height:58px;
+    padding:0 12px;
+    gap:10px;
+}
+
+.cti-call-pop.cti-minimized .cti-call-avatar{
+    width:38px;
+    height:38px;
+    flex-basis:38px;
+}
+
+.cti-call-pop.cti-minimized .cti-call-number{
+    font-size:15px;
+    line-height:18px;
+}
+
+.cti-call-pop.cti-minimized .cti-call-campaign,
+.cti-call-pop.cti-minimized .cti-call-body,
+.cti-call-pop.cti-minimized .cti-call-more{
+    display:none;
+}
+
+
+/* Call-end rating popup */
+.cti-rating-pop{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:350px;
+    background:#fff;
+    border:1px solid #dfe4ec;
+    border-radius:14px;
+    box-shadow:0 10px 32px rgba(0,0,0,.20);
+    z-index:100000;
+    overflow:visible;
+    display:none;
+}
+.cti-rating-pop.show{
+    display:block;
+    animation:ctiRatingIn .22s ease;
+}
+@keyframes ctiRatingIn{
+    from{transform:translateY(12px);opacity:0}
+    to{transform:translateY(0);opacity:1}
+}
+.cti-rating-head{
+    min-height:65px;
+    background:#17569a;
+    color:#fff;
+    border-radius:14px 14px 0 0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 15px;
+}
+.cti-rating-title{font-size:19px;font-weight:700}
+.cti-rating-subtitle{font-size:11px;margin-top:4px;opacity:.9}
+.cti-rating-close{
+    border:0;background:transparent;color:#fff;font-size:27px;cursor:pointer;
+    width:30px;height:30px;line-height:24px;
+}
+.cti-rating-options{
+    display:flex;
+    gap:7px;
+    padding:14px 10px;
+}
+.cti-rating-option{
+    flex:1;
+    min-height:76px;
+    border:1px solid #e0e5ed;
+    border-radius:9px;
+    background:#fff;
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    font-weight:700;
+    color:#334155;
+}
+.cti-rating-option:hover{
+    box-shadow:0 4px 12px rgba(0,0,0,.10);
+}
+.cti-rating-face{
+    width:34px;height:34px;border-radius:50%;
+    display:grid;place-items:center;font-size:19px;
+}
+.cti-rating-option.good .cti-rating-face{background:#d9f7e7;color:#159657}
+.cti-rating-option.bad .cti-rating-face{background:#ffdfe1;color:#d72b35}
+.cti-rating-option.better .cti-rating-face{background:#fff1c8;color:#d08a00}
+.cti-rating-bad-wrap{position:relative;flex:1}
+.cti-rating-bad-wrap .cti-rating-option{width:100%}
+.cti-rating-issues{
+    display:none;
+    position:absolute;
+    right:0;
+    bottom:calc(100% + 8px);
+    width:270px;
+    padding:7px;
+    background:#fff;
+    border:1px solid #dce2eb;
+    border-radius:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,.16);
+}
+.cti-rating-bad-wrap:hover .cti-rating-issues{display:block}
+.cti-rating-issues button{
+    width:100%;
+    border:0;
+    background:#fff;
+    border-radius:7px;
+    padding:9px;
+    text-align:left;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:12px;
+    color:#263247;
+}
+.cti-rating-issues button:hover{background:#f1f5f9}
+.cti-rating-issues b{
+    width:23px;height:23px;border-radius:50%;
+    display:grid;place-items:center;
+    background:#edf4ff;color:#1458bf;
+}
+.cti-rating-saved{
+    display:none;
+    margin:0 10px 10px;
+    padding:8px;
+    border-radius:7px;
+    background:#e8f8ee;
+    color:#13763f;
+    text-align:center;
+    font-size:12px;
+    font-weight:700;
+}
+.cti-rating-saved.show{display:block}
+@media(max-width:600px){
+    .cti-rating-pop{right:10px;bottom:10px;width:calc(100vw - 20px);max-width:350px}
+}
+
+
+/* Alternating incoming-call demo control and Data Not Found screen */
+.cti-test-next-call{
+    position:fixed;
+    left:258px;
+    bottom:18px;
+    z-index:100001;
+    border:1px solid #cbd5e1;
+    background:#fff;
+    color:#174ea6;
+    border-radius:8px;
+    padding:10px 14px;
+    font:700 13px Arial,Helvetica,sans-serif;
+    cursor:pointer;
+    box-shadow:0 5px 16px rgba(0,0,0,.12);
+}
+.cti-test-next-call:hover{background:#f5f8ff;}
+.cti-not-found-page{min-height:calc(100vh - 80px);display:flex;align-items:center;justify-content:center;padding:35px;}
+.cti-not-found-card{width:min(660px,90%);min-height:270px;border:1px solid #e0e5ec;border-radius:14px;background:#fff;box-shadow:0 8px 26px rgba(15,23,42,.08);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:35px;}
+.cti-not-found-icon{width:76px;height:76px;border-radius:50%;background:#eef3f9;color:#7c8fa8;display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+.cti-not-found-icon svg{width:34px;height:34px;}
+.cti-not-found-card h2{margin:0;color:#10213b;font:700 30px Arial,Helvetica,sans-serif;}
+.cti-not-found-card p{margin:12px 0 22px;color:#69778b;font:14px Arial,Helvetica,sans-serif;}
+.cti-main-associate-btn{border:0;background:#2860c7;color:#fff;border-radius:6px;padding:11px 19px;font:700 14px Arial,Helvetica,sans-serif;cursor:pointer;display:flex;align-items:center;gap:7px;}
+.cti-main-associate-btn:hover{background:#1f4fa9;}
+.cti-main-associate-btn svg{width:17px;height:17px;}
+@media(max-width:800px){.cti-test-next-call{left:15px;bottom:15px;}.cti-not-found-page{padding:20px;}}
+
+
+/* CTI unknown-call customer search in the top header */
+.header-search.cti-header-search-active{
+    width:330px;
+    padding:0 8px;
+    justify-content:flex-start;
+    background:#fff;
+}
+.cti-header-search-box{
+    width:100%;
+    height:36px;
+    display:flex;
+    align-items:center;
+    gap:7px;
+    border:1px solid #cfd8e6;
+    border-radius:7px;
+    padding:0 6px 0 9px;
+    background:#fff;
+}
+.cti-header-search-box svg{
+    width:17px;
+    height:17px;
+    color:#1555bd;
+    flex:0 0 auto;
+}
+.cti-header-search-box input{
+    min-width:0;
+    flex:1;
+    height:30px;
+    border:0;
+    outline:none;
+    font:14px Arial,Helvetica,sans-serif;
+    color:#263247;
+}
+.cti-header-search-box button{
+    height:28px;
+    border:0;
+    border-radius:5px;
+    background:#2860c7;
+    color:#fff;
+    padding:0 10px;
+    font:700 12px Arial,Helvetica,sans-serif;
+    cursor:pointer;
+}
+.cti-header-search-box button:hover{background:#1f4fa9;}
+.cti-header-search-box input.cti-search-error::placeholder{color:#d72b35;}
+
+.cti-search-hint{
+    margin-top:4px !important;
+    color:#2860c7 !important;
+}
+.cti-pop-associate-btn{
+    margin-top:10px;
+    border:0;
+    background:#2860c7;
+    color:#fff;
+    border-radius:6px;
+    padding:8px 13px;
+    font:700 13px Arial,Helvetica,sans-serif;
+    cursor:pointer;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+}
+.cti-pop-associate-btn:hover{background:#1f4fa9;}
+.cti-pop-associate-btn svg{width:15px;height:15px;}
+
+@media(max-width:800px){
+    .header-search.cti-header-search-active{width:250px;}
+}
+
+
+.cti-associate-confirm-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(15,27,48,.34);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:100000;
+    padding:20px;
+}
+.cti-associate-confirm-modal{
+    width:min(430px,100%);
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 18px 50px rgba(0,0,0,.22);
+    padding:26px 28px 22px;
+    text-align:center;
+    font-family:Arial,Helvetica,sans-serif;
+}
+.cti-associate-confirm-icon{
+    width:48px;
+    height:48px;
+    margin:0 auto 14px;
+    border-radius:50%;
+    background:#eaf2ff;
+    color:#2860c7;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.cti-associate-confirm-icon svg{width:23px;height:23px;}
+.cti-associate-confirm-modal h3{
+    margin:0 0 9px;
+    color:#10213d;
+    font-size:18px;
+}
+.cti-associate-confirm-modal p{
+    margin:0;
+    color:#5c6878;
+    font-size:13px;
+    line-height:1.55;
+}
+.cti-associate-confirm-actions{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:21px;
+}
+.cti-associate-confirm-actions button{
+    border:0;
+    border-radius:6px;
+    padding:9px 16px;
+    font:700 13px Arial,Helvetica,sans-serif;
+    cursor:pointer;
+}
+.cti-associate-cancel{background:#eef1f5;color:#344054;}
+.cti-associate-confirm{background:#2860c7;color:#fff;}
+.cti-associate-confirm:hover{background:#1f4fa9;}
